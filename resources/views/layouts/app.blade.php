@@ -8,21 +8,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
      <!-- Bootstrap4 CDN -->
     <title>Larapic</title>
+    <link rel="stylesheet" href="{{ asset('css/style.scss') }}">
+    <link rel="stylesheet" href="{{ asset('css/setting.css') }}">
+    
+
 </head>
 <body>
 <header class="header">
       <div class="header__bar row">
-        <h1 class="grid-6"><a href="/">Larapic</a></h1>
+        <h1 class="grid-6"><a href="/tweets">Larapic</a></h1>
         <div class="user_nav grid-6">
-          <a class="post" href="/submit">投稿する</a>
+          <a class="post" href="/tweets/create">投稿する</a>
         </div>
       </div>
     </header>
    
     {{-- コンテンツの表示 --}}
-    <div class="container">
+    <!-- <div class="container"> -->
         @yield('content')
-    </div>
+    <!-- </div> -->
 
     <footer>
       <p>
