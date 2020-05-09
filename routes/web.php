@@ -13,10 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    $Tweets = \App\Tweet::all();
-    return view('index', ['Tweets' => $Tweets]);
-});
+// Route::get('/', function () {
+//     $Tweets = \App\Tweet::all();
+//     return view('index', ['Tweets' => $Tweets]);
+// });
+Route::resource('tweets', 'TweetController');
+// Route::get('/','TweetController@index');
 Route::get('/submit', function () {
     return view('submit');
 });
