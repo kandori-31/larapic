@@ -8,8 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
      <!-- Bootstrap4 CDN -->
     <title>Larapic</title>
-    <link rel="stylesheet" href="{{ asset('css/style.scss') }}">
-    <link rel="stylesheet" href="{{ asset('css/setting.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/reset.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/index.css') }}">
+    <!-- <link href="/css/style.css" rel="stylesheet" type="text/css"> -->
+
     
 
 </head>
@@ -30,7 +32,7 @@
 
     <footer>
       <p>
-        Copyright PicTweet 2019.
+        Larapic
       </p>
     </footer>
 </div>
