@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class TweerRequest extends FormRequest
+class TweetRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class TweerRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -27,7 +27,6 @@ class TweerRequest extends FormRequest
             'title' => 'required|max:255',
             'image' => 'required|max:255|',
             'text' => 'required|max:255',
-            //
         ];
     }
 }
