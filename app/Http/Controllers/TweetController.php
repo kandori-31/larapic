@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Tweet;
 
-use App\Http\Requests\LinkRequest;
+use App\Http\Requests\TweetRequest;
 
 class TweetController extends Controller
 {
@@ -74,6 +74,9 @@ class TweetController extends Controller
     public function edit($id)
     {
         $tweet = Tweet::find($id);
+        return view('edit',[
+            "tweet" => $tweet
+        ]);
     }
 
     /**
@@ -85,7 +88,12 @@ class TweetController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $Tweet = Tweet::find($id);
+        $Tweet->title = $request->title;
+        $Tweet->image = $request->image;
+        $Tweet->text = $request->text;
+        $Tweet->save();
+        return redirect('/tweets');
     }
 
     /**
