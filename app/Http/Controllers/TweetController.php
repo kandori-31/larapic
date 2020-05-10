@@ -98,5 +98,6 @@ class TweetController extends Controller
     {
         $tweet = Tweet::find($id);
         $tweet->delete();
+        return redirect('/tweets');
     }
 }
