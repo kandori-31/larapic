@@ -28,3 +28,7 @@ Route::resource('tweets', 'TweetController');
 // });
 // use Illuminate\Http\Request;
 // Route::post('/submit','TweetController@submit');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

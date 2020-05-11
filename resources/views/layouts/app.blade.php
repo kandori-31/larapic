@@ -10,9 +10,6 @@
     <title>Larapic</title>
     <link rel="stylesheet" href="{{ asset('css/reset.css') }}">
     <link rel="stylesheet" href="{{ asset('css/index.css') }}">
-    <!-- <link href="/css/style.css" rel="stylesheet" type="text/css"> -->
-
-    
 
 </head>
 <body>
@@ -21,6 +18,8 @@
         <h1 class="grid-6"><a href="/tweets">Larapic</a></h1>
         <div class="user_nav grid-6">
           <a class="post" href="/tweets/create">投稿する</a>
+          <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+          <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
         </div>
       </div>
     </header>
