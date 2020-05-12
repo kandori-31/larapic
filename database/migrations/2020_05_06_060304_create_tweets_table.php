@@ -15,6 +15,8 @@ class CreateTweetsTable extends Migration
     {
         Schema::create('tweets', function (Blueprint $table) {
             $table->id();
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users'); 
             $table->string('title');
             $table->string('text');
             $table->text('image');
