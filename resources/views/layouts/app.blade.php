@@ -25,7 +25,7 @@
         @else
         
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#">
+          <a id="navbarDropdown" class="nav-link dropdown-toggle" href="/user/{{ Auth::user()->id }}">
             {{ Auth::user()->name }} 
           </a>
           <a class="dropdown-item" href="{{ route('logout') }}"
