@@ -9,18 +9,26 @@
         <div class="more">
         <span><img src = "/images/arrow_top.png"></span>
         <ul class="more_list">
-            <li>
-            <a href="/tweets/{{ $Tweet -> id }}">詳細</a>
-            </li>
-            <li>
-            <a href="/tweets/{{ $Tweet -> id }}/edit">編集</a>
-            <li>
-            <form action="/tweets/{{ $Tweet -> id }}" method = "post">
-            {{ csrf_field() }}
-            {{ method_field('delete') }}
-            <button>削除する</button>
-            </form>
-            </li>
+            @guest
+                <li>
+                    <a href="/tweets/{{ $Tweet -> id }}">詳細</a>
+                </li>
+            @else
+                <li>
+                    <a href="/tweets/{{ $Tweet -> id }}">詳細</a>
+                </li>
+                @if ($Tweet->user_id ===   Auth::user() -> id)
+                    <li>
+                    <a href="/tweets/{{ $Tweet -> id }}/edit">編集</a>
+                    <li>
+                    <form action="/tweets/{{ $Tweet -> id }}" method = "post">
+                    {{ csrf_field() }}
+                    {{ method_field('delete') }}
+                    <button>削除する</button>
+                    </form>
+                    </li>
+                @endif
+            @endguest
         </ul>
         </div>
         <p>{{ $Tweet -> text }}</p>
