@@ -37,6 +37,6 @@
         </span>
         </div>
     @endforeach
-    {{ $Tweets->links() }}
+    {{ $Tweets->links('pagination::default') }}
 </div>
 @endsection

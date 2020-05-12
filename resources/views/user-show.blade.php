@@ -12,5 +12,5 @@
         </span>
         </div>
     @endforeach
-    {{ $user->tweets->links() }}
+    {{ $user->tweets->links('pagination::default') }}
   @endsection
