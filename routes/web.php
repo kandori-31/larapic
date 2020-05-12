@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::resource('tweets', 'TweetController');
 
+Route::get('/user/{id}', 'TweetController@user');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
