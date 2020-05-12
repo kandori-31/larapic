@@ -44,7 +44,7 @@ a:hover {
 ::selection {
   background: #d8d8d8;
 }
-.btn, header.header .header__bar.row .grid-6 a.post {
+.btn, header.header .header__bar.row .grid-6 a.post, header.header .header__bar.row .grid-6 a.nav-links {
   padding: 8px 20px;
   font-size: 14px;
   border: 2px solid #57c3e9;
@@ -93,6 +93,10 @@ header.header .header__bar.row .grid-6 {
   text-align: right;
 }
 header.header .header__bar.row .grid-6 a.post {
+  width: 120px;
+  margin-left: 10px;
+}
+header.header .header__bar.row .grid-6 a.nav-links {
   width: 120px;
   margin-left: 10px;
 }

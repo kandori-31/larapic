@@ -13,18 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     $Tweets = \App\Tweet::all();
-//     return view('index', ['Tweets' => $Tweets]);
-// });
+
 Route::resource('tweets', 'TweetController');
-// Route::get('/tweets','TweetController@index');
-// Route::get('/tweets/create', 'TweetController@create');
-// Route::post('/tweets','TweetController@store');
-// Route::get('/tweets/{id}', 'TweetController@show');
-// Route::delete('/tweets/destroy/{id}', 'TweetController@destroy');
-// Route::get('/submit', function () {
-//     return view('submit');
-// });
-// use Illuminate\Http\Request;
-// Route::post('/submit','TweetController@submit');
+
+Route::get('/user/{id}', 'TweetController@user');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

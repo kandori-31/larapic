@@ -145,7 +145,11 @@ header.header {
         @extend .btn;
         width: 120px;
         margin-left: 10px;
-        
+        }
+      a.nav-links{
+        @extend .btn;
+        width: 120px;
+        margin-left: 10px;
       }
     }
   }

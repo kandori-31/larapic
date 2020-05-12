@@ -11,4 +11,8 @@ class Tweet extends Model
         'image',
         'text'
     ];
+
+    public function users(){
+    return $this->belongsTo('App\User');
+    }
 }
