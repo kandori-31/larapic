@@ -8,7 +8,7 @@ use App\Tweet;
 
 use App\User;
 
-use App\Http\Requests\LinkRequest;
+use App\Http\Requests\TweetRequest;
 
 class TweetController extends Controller
 {
@@ -96,6 +96,7 @@ class TweetController extends Controller
         $tweet->image = $request->image;
         $tweet->text = $request->text;
         $tweet->save();
+
         return redirect('/tweets');
     }
 
