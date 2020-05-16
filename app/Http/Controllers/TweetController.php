@@ -77,8 +77,14 @@ class TweetController extends Controller
     public function edit($id)
     {
         $tweet = Tweet::find($id);
+        $comment = new Comment();
+        $comment->user_id = $request->user()->id;
+        $comment->tweet_id = $tweet->id;
+        $comment->text = $request->text;
+        $comments = $tweet->comments;
         return view('edit',[
-            "tweet" => $tweet
+            "tweet" => $tweet,
+            "comments" => $comments
         ]);
     }
 
