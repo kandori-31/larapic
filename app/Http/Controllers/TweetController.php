@@ -8,6 +8,8 @@ use App\Tweet;
 
 use App\User;
 
+use App\Comment;
+
 use App\Http\Requests\TweetRequest;
 
 class TweetController extends Controller
@@ -63,8 +65,14 @@ class TweetController extends Controller
     public function show($id)
     {
         $tweet = Tweet::find($id);
+        // $comment = new Comment();
+        // $comment->user_id = $request->user()->id;
+        // $comment->tweet_id = $tweet->id;
+        // $comment->text = $request->text;
+        $comments = $tweet->comments;
         return view('show',[
-            "tweet" => $tweet
+            "tweet" => $tweet,
+            "comments" => $comments
         ]);
     }
 
@@ -77,14 +85,8 @@ class TweetController extends Controller
     public function edit($id)
     {
         $tweet = Tweet::find($id);
-        $comment = new Comment();
-        $comment->user_id = $request->user()->id;
-        $comment->tweet_id = $tweet->id;
-        $comment->text = $request->text;
-        $comments = $tweet->comments;
         return view('edit',[
-            "tweet" => $tweet,
-            "comments" => $comments
+            "tweet" => $tweet
         ]);
     }
 
