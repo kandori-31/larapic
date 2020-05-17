@@ -6,11 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Comment extends Model
 {
-    public function tweets(){
+    protected $fillable = [
+        'text'
+    ];
+
+    public function tweet(){
         return $this->belongsTo('App\Tweet');
     }
 
-    public function users(){
+    public function user(){
         return $this->belongsTo('App\User');
     }
 }
