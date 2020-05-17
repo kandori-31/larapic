@@ -22,8 +22,7 @@ class TweetController extends Controller
     public function index()
     {   
         $tweets = Tweet::paginate(5);
-        // $tweets = \App\Tweet::all();
-        // $users = $tweets->orderBy('id','desc')->paginate(10);
+        
         return view('index', [
             'Tweets' => $tweets
         ]);
@@ -65,14 +64,8 @@ class TweetController extends Controller
     public function show($id)
     {
         $tweet = Tweet::find($id);
-        // $comment = new Comment();
-        // $comment->user_id = $request->user()->id;
-        // $comment->tweet_id = $tweet->id;
-        // $comment->text = $request->text;
-        $comments = $tweet->comments;
         return view('show',[
-            "tweet" => $tweet,
-            "comments" => $comments
+            "tweet" => $tweet
         ]);
     }
 
