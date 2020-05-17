@@ -31,7 +31,7 @@
         @guest
             <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
         @else
-            <form action="/tweets" method="post">
+            <form action="/tweets/{{ $tweet -> id }}/comments" method="post">
                 {!! csrf_field() !!}
                 <div class="form-group">
                 <textarea class="form-control" id="description" name="text" placeholder="コメントする"></textarea>
@@ -42,12 +42,10 @@
 
         <div class="comments">
         <h4>＜コメント一覧＞</h4>
-        @if ($comments)
-            @foreach ($comments as $comment)
-            <p>
-                <strong><p>{{ $comment->user->name}}:</p></strong>
-                {{ $comment -> text }}
-            </p>
+        @if ($tweet->comments)
+            @foreach ($tweet->comments as $comment)
+            <strong><p>{{ $comment->user->name}}</p></strong>
+            <p class="comment">{{ $comment -> text }}</p>
             @endforeach
         @endif
     </div>
