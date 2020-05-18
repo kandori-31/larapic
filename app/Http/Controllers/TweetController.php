@@ -8,6 +8,8 @@ use App\Tweet;
 
 use App\User;
 
+use App\Comment;
+
 use App\Http\Requests\TweetRequest;
 
 class TweetController extends Controller
@@ -20,8 +22,7 @@ class TweetController extends Controller
     public function index()
     {   
         $tweets = Tweet::paginate(5);
-        // $tweets = \App\Tweet::all();
-        // $users = $tweets->orderBy('id','desc')->paginate(10);
+        
         return view('index', [
             'Tweets' => $tweets
         ]);
@@ -43,7 +44,7 @@ class TweetController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TweetRequest $request)
     {
         $Tweet = new Tweet();
         $Tweet->user_id = $request->user()->id;
@@ -89,7 +90,7 @@ class TweetController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(TweetRequest $request, $id)
     {
         $tweet = Tweet::find($id);
         $tweet->title = $request->title;

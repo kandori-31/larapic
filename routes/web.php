@@ -18,6 +18,8 @@ Route::resource('tweets', 'TweetController');
 
 Route::get('/user/{id}', 'TweetController@user');
 
+Route::post('/tweets/{id}/comments', 'CommentController@store');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
