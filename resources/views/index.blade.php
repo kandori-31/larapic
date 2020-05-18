@@ -3,6 +3,10 @@
 
 
 @section('content')
+<form class="search-form" action="">
+    <input type="text" class="search-input" placeholder="投稿を検索する"></input>
+    <button type="submit" class="search-btn">検索</button>
+</form>
 <div class="contents row">
     @foreach ($Tweets as $Tweet)
         <div class="content_post" style="background-image: url({{ $Tweet -> image }});">
