@@ -1,31 +1,30 @@
 @extends('layouts.app')
 
 
-
 @section('content')
 <form class="search-form" action="search">
-    <input type="text" name="keyword"  class="search-input" placeholder="投稿を検索する"></input>
+    <input type="text" name="keyword" value="{{ $keyword }}" class="search-input" placeholder="投稿を検索する"></input>
     <button type="submit" class="search-btn">検索</button>
 </form>
 <div class="contents row">
-    @foreach ($Tweets as $Tweet)
-        <div class="content_post" style="background-image: url({{ $Tweet -> image }});">
+    @foreach ($tweets as $tweet)
+        <div class="content_post" style="background-image: url({{ $tweet -> image }});">
         <div class="more">
         <span><img src = "/images/arrow_top.png"></span>
         <ul class="more_list">
             @guest
                 <li>
-                    <a href="/tweets/{{ $Tweet -> id }}">詳細</a>
+                    <a href="/tweets/{{ $tweet -> id }}">詳細</a>
                 </li>
             @else
                 <li>
-                    <a href="/tweets/{{ $Tweet -> id }}">詳細</a>
+                    <a href="/tweets/{{ $tweet -> id }}">詳細</a>
                 </li>
-                @if ($Tweet->user_id ===   Auth::user() -> id)
+                @if ($tweet->user_id ===   Auth::user() -> id)
                     <li>
-                    <a href="/tweets/{{ $Tweet -> id }}/edit">編集</a>
+                    <a href="/tweets/{{ $tweet -> id }}/edit">編集</a>
                     <li>
-                    <form action="/tweets/{{ $Tweet -> id }}" method = "post">
+                    <form action="/tweets/{{ $tweet -> id }}" method = "post">
                     {{ csrf_field() }}
                     {{ method_field('delete') }}
                     <button>削除する</button>
@@ -35,12 +34,12 @@
             @endguest
         </ul>
         </div>
-        <p>{{ $Tweet -> text }}</p>
+        <p>{{ $tweet -> text }}</p>
         <span class="name">
-        {{ $Tweet -> title }}
+        {{ $tweet -> title }}
         </span>
         </div>
     @endforeach
-    {{ $Tweets->links('pagination::default') }}
+    {{ $tweets->links('pagination::default') }}
 </div>
 @endsection
