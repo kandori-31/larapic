@@ -44,7 +44,7 @@ class TweetController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TweetRequest $request)
     {
         $Tweet = new Tweet();
         $Tweet->user_id = $request->user()->id;
@@ -90,7 +90,7 @@ class TweetController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(TweetRequest $request, $id)
     {
         $tweet = Tweet::find($id);
         $tweet->title = $request->title;

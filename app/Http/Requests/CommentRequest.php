@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class TweetRequest extends FormRequest
+class CommentRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,8 +24,6 @@ class TweetRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|min:1|max:255',
-            'image' => 'required|min:1|max:255|',
             'text' => 'required|min:1|max:255',
         ];
     }
