@@ -20,6 +20,8 @@ Route::get('/user/{id}', 'TweetController@user');
 
 Route::post('/tweets/{id}/comments', 'CommentController@store');
 
+Route::get('search','SearchController@index');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
