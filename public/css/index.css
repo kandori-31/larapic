@@ -72,6 +72,15 @@ a:hover {
   font-style: italic;
   font-size: 1.8em;
 }
+.delete-btn {
+  width: 100%;
+  border: none;
+  text-align: left;
+}
+.delete-btn:hover {
+  background-color: #57c3e9;
+  color: white;
+}
 header.header {
   padding: 10px;
   border-bottom: 1px solid #d8d8d8;
