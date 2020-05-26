@@ -122,6 +122,16 @@ a {
   }
 }
 
+.delete-btn{
+  width:100%;
+  border:none;
+  text-align: left;
+  &:hover{
+    background-color: #57C3E9;
+    color: white;
+  }
+}
+
 
 header.header {
   @include basePadding;
