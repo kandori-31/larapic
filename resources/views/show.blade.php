@@ -31,12 +31,12 @@
         @guest
             <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
         @else
-            <form action="/tweets/{{ $tweet -> id }}/comments" method="post">
+            <form action="/tweets/{{ $tweet -> id }}/comments" method="post" id="comment-form">
                 {!! csrf_field() !!}
                 <div class="form-group">
                 <textarea class="form-control" id="description" name="text" placeholder="コメントする"></textarea>
                 </div>
-                <button type="submit" class="btn btn-default">SEND</button>
+                <button type="submit" class="btn btn-default form__submit">SEND</button>
             </form>
         @endguest
 
