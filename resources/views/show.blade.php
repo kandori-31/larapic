@@ -44,8 +44,12 @@
         <h4>＜コメント一覧＞</h4>
         @if ($tweet->comments)
             @foreach ($tweet->comments as $comment)
-            <strong><p>{{ $comment->user->name}}</p></strong>
-            <p class="comment">{{ $comment -> text }}</p>
+            <p>
+                <strong>
+                    <a href=/user/{{ $comment->user_id }}>{{ $comment->user->name }}</a >:
+                </strong >
+                {{ $comment->text }}
+            </p > 
             @endforeach
         @endif
     </div>
