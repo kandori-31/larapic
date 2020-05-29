@@ -28,7 +28,7 @@
                     <form action="/tweets/{{ $Tweet -> id }}" method = "post">
                     {{ csrf_field() }}
                     {{ method_field('delete') }}
-                    <button class="delete-btn">削除する</button>
+                    <button class="delete-btn">削除</button>
                     </form>
                     </li>
                 @endif
