@@ -235,6 +235,18 @@ header.header .user_nav ul li a {
 .contents.row .content_post .more ul.more_list li {
   border-bottom: 1px solid #ddd;
 }
+.contents.row .content_post .more ul.more_list li .delete-btn {
+  background-color: #fff;
+  letter-spacing: 2px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  color: gray;
+}
+.contents.row .content_post .more ul.more_list li .delete-btn:hover {
+  background-color: #57c3e9;
+  color: #fff;
+}
 .contents.row .content_post .more ul.more_list li:last-child {
   border-bottom: 0;
 }
