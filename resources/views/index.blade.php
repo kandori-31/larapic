@@ -9,8 +9,11 @@
 </form>
 <div class="contents row">
     @foreach ($Tweets as $Tweet)
-        <div class="content_post" style="background-image: url({{ $Tweet -> image }});">
+        <div class="content_post" style= "background-image: url(/storage/images/r2Wgo6lQLZmtmsC3QxD32CawTPVJApfnnYWGEOVV.jpeg)">
+
+        <img src=>
         <div class="more">
+            <a href="{{ $Tweet ->image }}">編集</a>
         <span><img src = "/images/arrow_top.png"></span>
         <ul class="more_list">
             @guest
