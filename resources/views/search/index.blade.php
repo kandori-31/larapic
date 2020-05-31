@@ -8,7 +8,7 @@
 </form>
 <div class="contents row">
     @foreach ($tweets as $tweet)
-        <div class="content_post" style="background-image: url({{ $tweet -> image }});">
+        <div class="content_post" style="background-image: url(/storage/images/{{ $tweet -> image }});">
         <div class="more">
         <span><img src = "/images/arrow_top.png"></span>
         <ul class="more_list">

@@ -3,7 +3,7 @@
 
 @section('content')
 <div class ="contents row">
-    <div class="content_post" style="background-image: url({{ $tweet -> image }});">
+    <div class="content_post" style="background-image: url(/storage/images/{{ $tweet->image }});">
         @unless(Auth::guest())
             @if ($tweet->user_id ===   Auth::user() -> id)
                 <div class="more">
