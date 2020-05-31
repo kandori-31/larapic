@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
         <h3>投稿する</h3>
-        <form action="/tweets" method="post">
+        <form action="/tweets" method="post" enctype="multipart/form-data">
             {!! csrf_field() !!}
 
             <div class="form-group">
@@ -13,8 +13,9 @@
             </div>
 
             <div class="form-group">
-            <label for="image">Url</label>
-                <input type="text" class="form-control" id="imgae" name="image" placeholder="Image URL">
+            <!-- <label for="image">Url</label>
+                <input type="text" class="form-control" id="imgae" name="image" placeholder="Image URL"> -->
+                <input type="file" name="image">
             </div>
 
             <div class="form-group">
