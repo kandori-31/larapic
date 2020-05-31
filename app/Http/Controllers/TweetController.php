@@ -49,7 +49,8 @@ class TweetController extends Controller
         $Tweet = new Tweet();
         $Tweet->user_id = $request->user()->id;
         $Tweet->title = $request->title;
-        $Tweet->image = $request->image;
+        $Tweet->image = $request->image->store('public/storage/images');
+        // $Tweet->image = $request->image;
         $Tweet->text = $request->text;
         $Tweet->save();
         return redirect('/tweets');
