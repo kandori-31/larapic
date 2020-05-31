@@ -49,7 +49,9 @@ class TweetController extends Controller
         $Tweet = new Tweet();
         $Tweet->user_id = $request->user()->id;
         $Tweet->title = $request->title;
-        $Tweet->image = $request->image->store('public/storage/images');
+        $file_name = $request->image->getClientOriginalName();
+        $request->image->storeAs('public/images',$file_name);
+        $Tweet->image = $file_name;
         // $Tweet->image = $request->image;
         $Tweet->text = $request->text;
         $Tweet->save();
@@ -95,7 +97,9 @@ class TweetController extends Controller
     {
         $tweet = Tweet::find($id);
         $tweet->title = $request->title;
-        $tweet->image = $request->image;
+        $file_name = $request->image->getClientOriginalName();
+        $request->image->storeAs('public/images',$file_name);
+        $tweet->image = $file_name;
         $tweet->text = $request->text;
         $tweet->save();
 
