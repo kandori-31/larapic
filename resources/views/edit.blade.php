@@ -4,7 +4,7 @@
 @section('content')
 <div class="contents row">
   <div class="container">
-    <form action="/tweets/{{ $tweet -> id }}" method = "post">
+    <form action="/tweets/{{ $tweet -> id }}" method = "post" enctype="multipart/form-data">
       {{ csrf_field() }}
       {{ method_field('put') }}
       <h3>
@@ -16,8 +16,8 @@
       </div>
 
       <div class="form-group">
-        <label for="image">Url</label>
-        <input type="text" class="form-control" id="imgae" name="image" value='{{ $tweet->image }}' placeholder="Image URL">
+        <label for="image">Picture</label>
+        <input type="file" class="form-control" id="imgae" name="image" value='{{ $tweet->image }}'>
       </div>
 
       <div class="form-group">
