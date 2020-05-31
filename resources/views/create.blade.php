@@ -13,8 +13,7 @@
             </div>
 
             <div class="form-group">
-            <!-- <label for="image">Url</label>
-                <input type="text" class="form-control" id="imgae" name="image" placeholder="Image URL"> -->
+            <label for="image">Picture</label>
                 <input type="file" name="image">
             </div>
 
