@@ -25,7 +25,7 @@ class TweetRequest extends FormRequest
     {
         return [
             'title' => 'required|min:1|max:255',
-            'image' => 'required|min:1|max:255|',
+            'image' => 'required|file|image|mimes:jpeg,png,jpg,gif|max:2048',
             'text' => 'required|min:1|max:255',
         ];
     }
