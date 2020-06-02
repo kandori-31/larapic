@@ -80,12 +80,6 @@ a {
   background: $gray;
 }
 
-// .transition {
-//   @include transition-property(all);
-//   @include transition-duration(0.2s);
-//   @include transition-timing-function(linear);
-// }
-
 .btn {
     @include basePadding(8px 20px);
     font-size: 14px;
